@@ -1,14 +1,14 @@
 import classnames from 'classnames/bind';
 import {
-  AccountTree,
-  Forum,
+  // AccountTree,
+  // Forum,
   Home,
-  Person,
-  PieChart,
-  Settings,
+  // Person,
+  // PieChart,
+  // Settings,
   ViewList,
 } from '@mui/icons-material';
-import { Badge, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import type { PaperProps } from '@mui/material';
 
 import t from '../../translations/en.json';
@@ -21,23 +21,23 @@ const cx = classnames.bind(styles);
 /**
  * User profile button rendered in the application sidebar
  */
-function UserProfileButton(props: { notificationCount?: number }) {
-  const { notificationCount } = props;
+// function UserProfileButton(props: { notificationCount?: number }) {
+//   const { notificationCount } = props;
 
-  const button = (
-    <NavIconButton className={cx('profile-button')} icon={Person} title={t.sidebar.profileTitle} />
-  );
+//   const button = (
+//     <NavIconButton className={cx('profile-button')} icon={Person} title={t.sidebar.profileTitle} />
+//   );
 
-  if (notificationCount) {
-    return (
-      <Badge className={cx('notification-badge')} badgeContent={notificationCount} color="error">
-        {button}
-      </Badge>
-    );
-  }
+//   if (notificationCount) {
+//     return (
+//       <Badge className={cx('notification-badge')} badgeContent={notificationCount} color="error">
+//         {button}
+//       </Badge>
+//     );
+//   }
 
-  return button;
-}
+//   return button;
+// }
 
 /**
  * Application sidebar component

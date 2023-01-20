@@ -25,7 +25,15 @@ export default function CustomCard({ smiles, selected, disable, onClick }) {
       onClick={() => !disable && onClick(smiles)}
     >
       <CardActionArea>
-        <CardMedia component="img" height="194" image={''} alt="SMILES-image" />
+        <CardMedia
+          component="img"
+          height="194"
+          image={
+            'https://dikshaprakash-refactored-computing-59x4x4prjq9349vv-4173.preview.app.github.dev/api/image/?smiles=' +
+            toString(smiles)
+          }
+          alt="SMILES-image"
+        />
         <CardContent>
           <Typography variant="body2" align="center">
             {smiles}

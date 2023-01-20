@@ -1,14 +1,19 @@
 import AddIcon from '@mui/icons-material/Add';
+import Button from '@mui/material/Button';
 
-import CustomCard from './Card';
-import { Grid, IconButton } from '@mui/material';
-import { TextField } from '@mui/material/TextField';
+import { Grid } from '@mui/material';
 import { useState } from 'react';
+import CustomCard from './Card';
 import './CardStyle.css';
 const smiles = [
-  'CC(C)(C)c1ccc2c3ccc(C(C)(C)C)cc3n(-c3cc4c5c(c3)N(c3ccccc3-c3ccccc3)c3ccccc3B5c3cc5c(cc3N4c3ccccc3)N(c3ccccc3-c3ccccc3)c3cc(N(c4ccccc4)c4ccccc4-c4ccccc4)cc4c3B5c3ccccc3S4)c2c1',
-  'CC(C)(C)c1ccc(N(c2ccccc2)c2ccc3cc4c(cc3c2)oc2c4c3ccc(N(c4ccccc4)c4ccc(C(C)(C)C)cc4)c4c5c6ccccc6sc5n2c34)cc1',
-  'Cc1nc(C)c(CCC(=O)N2CC(=O)N(C)c3ccccc32)c(=O)[nH]1',
+  'C=C',
+  'O=C=O',
+  'CC(O)C',
+  'CC(C)N1CCC(C(=O)C(F)(F)F)CC1',
+  'CC(=O)C',
+  'CC(C)Oc1ccc(-c2cc3c(cc2C(N)=O)nnn3-c2ccc(OC(C)C)cc2)cc1',
+  'COC(=O)[C@H](COCC(OC)OC)NC(=O)c1c(OC)c(=O)ccn1NC(=O)OC(C)(C)C',
+  'CC(CC)C',
 ];
 
 function Comparison() {
@@ -22,9 +27,13 @@ function Comparison() {
     }
   };
 
+  const compareCard = (smile1, smile2) => {
+    // console.log(smile1, smile2);
+  };
+
   return (
     <div>
-      <TextField id="standard-basic" label="Select" sx={{ mt: 8 }} />
+      {/* <TextField id="standard-basic" label="Select" sx={{ mt: 8 }} /> */}
       <div className="card-stack">
         <Grid container spacing={2}>
           {smiles.map((s) => (
@@ -39,6 +48,11 @@ function Comparison() {
           ))}
         </Grid>
       </div>
+      <Grid container justifyContent="flex-end">
+        <Button disabled={selected.length < 2} onClick={compareCard(selected[0], selected[1])}>
+          Compare
+        </Button>
+      </Grid>
     </div>
   );
 }
