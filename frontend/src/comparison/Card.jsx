@@ -5,26 +5,34 @@ import { CardActionArea, Typography } from '@mui/material';
 import { Route } from 'react-router';
 import './CardStyle.css';
 
-export default function CustomCard() {
-  const eachCard = [
-    {
-      img: '#',
-      description: 'describe cards',
-    },
-  ];
+export default function CustomCard({ smiles, selected, disable, onClick }) {
+  // const eachCard = [
+  //   {
+  //     selected: false,
+  //     img: '#',
+  //     description: 'describe cards',
+  //   },
+  // ];
 
-  return eachCard.map((el) => {
-    return (
-      <Card sx={{ maxWidth: 200 }}>
-        <CardActionArea>
-          <CardMedia component="img" height="194" image={el.img} alt="SMILES-image" />
-          <CardContent>
-            <Typography variant="body2" align="center">
-              {el.description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    );
-  });
+  // return eachCard.map((el) => {
+  let cardBoarder = '';
+  if (selected) {
+    cardBoarder = '3px solid blue';
+  }
+  return (
+    <Card
+      sx={{ maxWidth: 200, border: cardBoarder, opacity: disable ? 0.5 : 1 }}
+      onClick={() => !disable && onClick(smiles)}
+    >
+      <CardActionArea>
+        <CardMedia component="img" height="194" image={''} alt="SMILES-image" />
+        <CardContent>
+          <Typography variant="body2" align="center">
+            {smiles}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+  // });
 }
