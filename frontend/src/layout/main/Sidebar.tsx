@@ -53,7 +53,7 @@ function Sidebar(props: PaperProps) {
         <NavIconButton icon={Home} path="/" title={t.home.pageTitle} exact />
 
         {/* Populate this sidebar item with the appropriate icon, path, and title for your application */}
-        <NavIconButton icon={ViewList} title="" />
+        <NavIconButton icon={ViewList} path="comparison" title="Comparison" />
 
         <NavIconButton icon={PieChart} title={t.sidebar.pieTitle} />
         <NavIconButton icon={AccountTree} title={t.sidebar.treeTitle} />
