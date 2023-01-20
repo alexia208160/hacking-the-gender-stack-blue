@@ -4,6 +4,7 @@
     /* Language and Environment */
     "target": "ESNext",
     "jsx": "react-jsx",
+    "allowJs": true,
 
     /* Modules */
     "module": "ESNext",

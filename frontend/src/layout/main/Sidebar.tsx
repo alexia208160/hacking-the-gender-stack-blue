@@ -53,20 +53,20 @@ function Sidebar(props: PaperProps) {
         <NavIconButton icon={Home} path="/" title={t.home.pageTitle} exact />
 
         {/* Populate this sidebar item with the appropriate icon, path, and title for your application */}
-        <NavIconButton icon={ViewList} title="" />
+        <NavIconButton icon={ViewList} path="comparison" title="Comparison" />
 
-        <NavIconButton icon={PieChart} title={t.sidebar.pieTitle} />
+        {/* <NavIconButton icon={PieChart} title={t.sidebar.pieTitle} />
         <NavIconButton icon={AccountTree} title={t.sidebar.treeTitle} />
-        <NavIconButton icon={Forum} title={t.sidebar.feedbackTitle} />
+        <NavIconButton icon={Forum} title={t.sidebar.feedbackTitle} /> */}
       </div>
 
       <div className={cx('button-stack', 'user-pref-buttons')}>
-        <NavIconButton
+        {/* <NavIconButton
           className={cx('settings-button')}
           icon={Settings}
           title={t.sidebar.settingsTitle}
         />
-        <UserProfileButton notificationCount={12} />
+        <UserProfileButton notificationCount={12} /> */}
       </div>
     </Paper>
   );

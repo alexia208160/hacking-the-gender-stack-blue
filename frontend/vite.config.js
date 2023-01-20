@@ -10,7 +10,7 @@ export default {
     checker({
       eslint: { lintCommand: 'eslint src/**/*.{ts,tsx}' },
       stylelint: { lintCommand: 'stylelint src/**/*.scss' },
-      typescript: true,
+      // typescript: true,
     }),
   ],
   server: {

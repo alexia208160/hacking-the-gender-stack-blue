@@ -14,13 +14,16 @@ function Home() {
   return (
     <div className={cx('home-container')}>
       <Typography variant="h2" fontWeight={700} color="primary">
-        {t.home.welcomeTo}
-        <br />
-        {t.home.eventName}
+        {t.home.welcomeTo + ' Team Blue'}
+        {/* <br />
+        {t.home.eventName} */}
+        {/* <br /> */}
       </Typography>
 
       <Typography variant="h6" component="span">
-        {t.home.description}
+        {/* {t.home.description}
+        <br /> */}
+        Names
       </Typography>
     </div>
   );
