@@ -45,12 +45,8 @@ class SimilarityMap(APIView):
 
         mol1 = Chem.MolFromSmiles(smiles1)
         mol2 = Chem.MolFromSmiles(smiles2)
-        img = Draw.MolsToGridImage((smiles1, smiles2))
 
-        return HttpResponse(img, content_type="image/svg+xml")
-
-        """
-        d = Draw.MolDraw2DCairo(400, 400)
+        d = Draw.MolDraw2DSVG(400, 400)
         _, maxWeight = SimilarityMaps.GetSimilarityMapForFingerprint(
             mol1,
             mol2,
@@ -61,8 +57,7 @@ class SimilarityMap(APIView):
         )
 
         d.FinishDrawing()
-        bio = io.BytesIO(d.GetDrawingText())
-        img = Image.open(bio)
+        img = d.GetDrawingText().encode()
+        # img = Image.open(bio)
 
-        return HttpResponse(img, content_type="image/png")
-        """
+        return HttpResponse(img, content_type="image/svg+xml")
